@@ -25,13 +25,10 @@ Usage
 
     *** Keywords ***
     Initialize
-        Open Browser                      url              Chrome
-
-        # add PERCY_TOKEN to Environment
-        Append To Environment Variable    PERCY_TOKEN      PERCY_TOKEN
+        Open Browser              url    Chrome
 
         # initialize percy
-        Percy Initialize Build
+        Percy Initialize Build    access_token=${PERCY_TOKEN}
 
     Take Snapshot
         # take snapshot
